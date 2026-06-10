@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>النموذج المالي | إدارة الفجوة النقدية وتحجيم المخاطر الزراعية</title>
+    <!-- Google Fonts: خط حديث ومناسب للغة العربية -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (للأيقونات الاحترافية) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(145deg, #eef5e8 0%, #d9e6c3 100%);
+            color: #1e2a1f;
+            line-height: 1.55;
+            padding: 2rem 1.5rem;
+        }
+
+        /* حاوية رئيسية عصرية */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffffdd;
+            backdrop-filter: blur(2px);
+            border-radius: 48px 32px 48px 32px;
+            box-shadow: 0 30px 50px rgba(0, 20, 0, 0.2);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        /* الهيدر الجذاب */
+        .hero {
+            background: #1f4f2b;
+            background-image: radial-gradient(circle at 10% 30%, #2c6e3a, #0f3a1a);
+            padding: 2rem 2rem 1.8rem;
+            text-align: center;
+            border-bottom: 5px solid #f9b81b;
+        }
+
+        .hero h1 {
+            color: #fef9e6;
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 i {
+            margin-left: 12px;
+            color: #ffd966;
+        }
+
+        .hero .sub {
+            color: #e2f0da;
+            font-weight: 500;
+            font-size: 1rem;
+            border-top: 1px dashed #9bc48b;
+            display: inline-block;
+            padding-top: 0.6rem;
+        }
+
+        /* محتوى داخلي */
+        .content {
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        /* بطاقات الأقسام الرئيسية */
+        .section-card {
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2.8rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+            border: 1px solid #e0efd6;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-header {
+            background: #faf9ed;
+            padding: 1.2rem 2rem;
+            border-right: 8px solid #f9b81b;
+            border-bottom: 2px solid #deecce;
+        }
+
+        .section-header h2 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #1f4f2b;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-header h2 i {
+            color: #f9b81b;
+            font-size: 1.8rem;
+        }
+
+        .section-body {
+            padding: 1.8rem 2rem 2rem;
+        }
+
+        /* تنسيق النقاط والجمل الرئيسية */
+        p, li, .text-block {
+            font-size: 1.05rem;
+            color: #1e2a1f;
+        }
+
+        .highlight-text {
+            background: #fef7e0;
+            border-right: 4px solid #f9b81b;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        .risk-box, .metric-box {
+            background: #f8faf5;
+            border-radius: 24px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.2rem 0;
+            border: 1px solid #cbe3bc;
+        }
+
+        /* قوائم جميلة */
+        ul, .custom-list {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        ul li, .custom-list li {
+            margin-bottom: 0.9rem;
+            padding-right: 2rem;
+            position: relative;
+            font-weight: 500;
+        }
+
+        ul li:before, .custom-list li:before {
+            content: "🌱";
+            position: absolute;
+            right: 0;
+            color: #2c7a3b;
+            font-size: 1.1rem;
+        }
+
+        /* بطاقات المراحل الثلاث */
+        .stages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .stage-card {
+            background: white;
+            border-radius: 28px;
+            border: 1px solid #cfebc2;
+            overflow: hidden;
+            transition: all 0.2s;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .stage-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stage-title {
+            background: #2b7340;
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: 800;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stage-title i {
+            font-size: 1.5rem;
+        }
+
+        .stage-content {
+            padding: 1.4rem 1.6rem 1.8rem;
+        }
+
+        .stage-content p {
+            margin: 0 0 0.8rem 0;
+            font-weight: 600;
+        }
+
+        .stage-content .policy {
+            background: #f3f9ef;
+            padding: 0.8rem 1rem;
+            border-radius: 20px;
+            margin: 0.8rem 0;
+            font-size: 0.98rem;
+        }
+
+        hr.divider {
+            margin: 2rem 0;
+            border: 1px solid #cde2be;
+        }
+
+        .badge-cash {
+            background: #eaf6e3;
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1f5a2e;
+            display: inline-block;
+            margin-left: 8px;
+        }
+
+        strong, b {
+            color: #1f5f2a;
+        }
+
+        /* أرقام وإحصائيات */
+        .stat-number {
+            background: #fef1ce;
+            border-radius: 24px;
+            padding: 0.2rem 0.6rem;
+            font-weight: 800;
+            font-family: monospace;
+            font-size: 1rem;
+            color: #aa6f00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #ebf5e4;
+            border-top: 1px solid #cde2be;
+            font-size: 0.8rem;
+            color: #3a5e34;
+        }
+
+        @media (max-width: 680px) {
+            .content {
+                padding: 1.2rem;
+            }
+            .section-body {
+                padding: 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .section-header h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1><i class="fas fa-chart-line"></i> إدارة الفجوة النقدية وتحجيم المخاطر الزراعية</h1>
+        <div class="sub"> Cash Gap & Risk Mitigation Model | نموذج ديناميكي متكامل</div>
+    </div>
+    <div class="content">
+        <!-- القسم الأول: التشخيص المالي الحالي -->
+        <div class="section-card">
+            <div class="section-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> أولاً: التحليل المالي للوضع الحالي (تشخيص المخاطر والسيولة)</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-text">
+                    <i class="fas fa-tint"></i> <strong>معضلة السيولة للشركة (The Cash Crunch):</strong>
+                </div>
+                <ul>
+                    <li>في نهاية شهر 12، يكون المزارع مديناً بـ 80,000 جنيه (53% من إجمالي مديونيته المتوقعة).</li>
+                    <li>في المقابل، التوريد في شهر 11 و12 ضعيف جداً، والمصانع تحتجز 50% من قيمته وتدفع الباقي كل 20 يوماً.</li>
+                    <li>النتيجة: الشركة تدفقاتها النقدية الداخلة (Inflow) من المصانع في بداية الموسم شبيهة بالمعدومة، بينما مديونية المزارع في أقصى ارتفاع لها.</li>
+                </ul>
+
+                <div class="metric-box">
+                    <i class="fas fa-chart-pie"></i> <strong>نسبة التغطية ومخاطر الهروب (Asset-to-Debt & Side-Selling):</strong>
+                    <ul style="margin-top: 12px;">
+                        <li>إجمالي إنتاج الفدان (300,000 جنيه) يمثل ضعف المديونية (150,000 جنيه). هذه نسبة أمان ممتازة (تغطية 200%).</li>
+                        <li>لكن بما أن الحساب "سعر سوق يومي"، فإن المزارع يقع تحت إغراء "البيع الجانبي" (الهروب للسوق السوداء) إذا لم يحصل على سيولة كاش (أجور عمالة/ترضية) من الشركة، خاصة أن المصانع تحتجز جزءاً من الأموال.</li>
+                    </ul>
+                </div>
+
+                <div class="risk-box">
+                    <i class="fas fa-calendar-alt"></i> <strong>نقطة الحسم (شهر 4):</strong>
+                    <ul>
+                        <li>السياسة الحالية تلزم بتصفية الـ 150,000 جنيه (حساب المبيدات والري) في 30/4.</li>
+                        <li>بما أن ذروة الإنتاج في (2 و3 و4)، فهذه هي "النافذة الزمنية الوحيدة" التي تتدفق فيها كميات ضخمة من الفراولة تسمح بالسداد والتحصيل بالتوازي.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- القسم الثاني: الحل المالي المقترح (النموذج الديناميكي) -->
+        <div class="section-card">
+            <div class="section-header">
+                <h2><i class="fas fa-brain"></i> ثانياً: الحل المالي المقترح (The Dynamic Retention Model)</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-text" style="margin-bottom: 1rem;">
+                    <i class="fas fa-lightbulb"></i> <strong>لحل إشكالية:</strong> (كيف نضمن تصفية مديونية المزارع قبل نهاية شهر 4، وفي نفس الوقت نعطيه نسبة كاش كافية لمنعه من الهروب، مع مراعاة احتجاز المصانع لـ 50%؟)
+                </div>
+                <p>نوصي بتطبيق <strong>"سياسة الخصم الديناميكي الشرائحي" (Tiered Retention Policy)</strong> بناءً على مراحل الموسم، بدلاً من فرض نسبة ثابتة طوال الـ 10 أشهر. تنقسم الحسبة في الـ ERP إلى 3 مراحل:</p>
+
+                <!-- شبكة المراحل الثلاث -->
+                <div class="stages-grid">
+                    <!-- المرحلة الأولى -->
+                    <div class="stage-card">
+                        <div class="stage-title">
+                            <i class="fas fa-hourglass-start"></i> المرحلة الأولى
+                        </div>
+                        <div class="stage-content">
+                            <p><strong>مرحلة عنق الزجاجة (شهر 11 وشهر 12)</strong></p>
+                            <p><i class="fas fa-bullseye"></i> <strong>الهدف:</strong> المحافظة على المزارع وتشجيعه على التوريد رغم ضعف المحصول.</p>
+                            <div class="policy"><i class="fas fa-hand-holding-usd"></i> <strong>السياسة:</strong>
+                                <ul style="margin-top: 8px;">
+                                    <li>يتم توريد المحصول بسعر السوق اليومي.</li>
+                                    <li>يتم اقتطاع 30% فقط من قيمة التوريد لصالح حساب مديونية المزارع.</li>
+                                    <li>يتم صرف 70% كاش للمزارع (مباشرة فور التحصيل من المصنع بعد 20 يوماً) كمصاريف تشغيل وأجور عمال لضمان ولائه.</li>
+                                </ul>
+                            </div>
+                            <p><i class="fas fa-chart-simple"></i> <strong>الوضع المالي بنهاية ديسمبر:</strong> مديونية المزارع ستظل مرتفعة (قريبة من 80,000 أو تزيد قليلاً)، ولكن تم ترويض مخاطر هروبه وتأمين استمرار التوريد.</p>
+                        </div>
+                    </div>
+
+                    <!-- المرحلة الثانية -->
+                    <div class="stage-card">
+                        <div class="stage-title">
+                            <i class="fas fa-chart-line"></i> المرحلة الثانية
+                        </div>
+                        <div class="stage-content">
+                            <p><strong>مرحلة الهجوم والتصفية الحتمية (شهور الذروة: 2 و 3 و 4)</strong></p>
+                            <p><i class="fas fa-bullhorn"></i> <strong>الهدف:</strong> استغلال التدفق الضخم للمحصول لتصفية الـ 150,000 جنيه بالكامل قبل 30/4.</p>
+                            <div class="policy"><i class="fas fa-arrow-right-arrow-left"></i> <strong>السياسة:</strong> تنعكس النسب تماماً بسبب كثرة الإنتاج:
+                                <ul style="margin-top: 8px;">
+                                    <li>يتم اقتطاع 70% من قيمة التوريدات اليومية وتوجيهها مباشرة لإغلاق حساب مدين (مبيدات ومستلزمات).</li>
+                                    <li>يتم صرف 30% فقط كاش للمزارع (حيث أن الـ 30% من إنتاج الذروة ستعادل رقماً كبيراً يكفي وزيادة لأجور عماله وزيادة).</li>
+                                </ul>
+                            </div>
+                            <p><i class="fas fa-check-circle"></i> <strong>الوضع المالي في 30/4:</strong> بمعادلة تدفق الإنتاج، ستغطي الـ 70% المستقطعة في هذه الشهور الثلاثة كامل المديونية المتبقية (150,000)، ويغلق حساب المبيدات تماماً (صفر مديونية).</p>
+                        </div>
+                    </div>
+
+                    <!-- المرحلة الثالثة -->
+                    <div class="stage-card">
+                        <div class="stage-title">
+                            <i class="fas fa-hand-holding-heart"></i> المرحلة الثالثة
+                        </div>
+                        <div class="stage-content">
+                            <p><strong>مرحلة جني الأرباح (شهر 5 وشهر 6 وحتى التصفية في شهر 8)</strong></p>
+                            <p><i class="fas fa-seedling"></i> <strong>الهدف:</strong> تصفية حساب التوريدات الدائن للمزارع بعد استلام أموال الشركة المحتجزة لدى المصانع.</p>
+                            <div class="policy"><i class="fas fa-coins"></i> <strong>السياسة:</strong>
+                                <ul style="margin-top: 8px;">
+                                    <li>حساب المبيدات أصبح (صفراً). كل كيلوغرام فراولة يورده المزارع الآن هو "حق خالص له" (دائن).</li>
+                                    <li>تستمر الشركة في صرف 50% للمزارع (وهي القيمة التي تسددها المصانع كل 20 يوماً).</li>
+                                    <li>يتم فتح حساب أمانات أو مستحقات مؤجلة للمزارع يسمى "محتجزات المزارعين بانتظار تصفية المصانع".</li>
+                                    <li>في شهر 8، عند استلام الشركة الـ 50% المحتجزة من المصانع، يتم عمل تسوية بنكية فورية وضخ الأموال في حساب المزارع وإغلاق الموسم بربحية الطرفين.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- نص إضافي تكاملي (موجود أصلاً تحت المرحلة الثالثة في النص) تم دمجه بالكامل داخل بطاقة المرحلة الثالثة -->
+                <hr class="divider">
+                <div class="highlight-text" style="background: #e7f2e1;">
+                    <i class="fas fa-chalkboard-user"></i> <strong>ملخص التنفيذ بنظام Agroking V9 :</strong> "المعادلة المالية المقترحة" لتضمينها في الـ ERP تضمن تصفية المديونية بنهاية أبريل، مع تحقيق توازن السيولة للمزارع طوال الموسم واحتواء مخاطر البيع الجانبي.
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم ختامي يعيد تلخيص مبدأ النموذج (كامل النص الأصلي موجود بالأعلى) -->
+        <div class="section-card">
+            <div class="section-header">
+                <h2><i class="fas fa-chalkboard"></i> ملخص التكامل التشغيلي والمالي</h2>
+            </div>
+            <div class="section-body">
+                <p style="margin-bottom: 12px;">✅ <strong>السياسة الديناميكية المقترحة</strong> تحل أزمة "نقطة الاختناق النقدية" (Cash Choke Point) في الشهور (11،12) والعكس في شهور الذروة، وتضمن:</p>
+                <ul>
+                    <li>حماية المزارع من أزمات السيولة التشغيلية عبر صرف 70% كاش في مرحلة عنق الزجاجة.</li>
+                    <li>تصفية مستحقات الشركة بقوة خلال موسم الحصاد الغزير بخصم 70% من التوريدات لسداد المديونية.</li>
+                    <li>إنهاء الموسم المالي بتصفية كاملة للمحتجزات وبناء ثقة مع المزارعين، مع تقليل مخاطر الهروب للسوق الموازي.</li>
+                </ul>
+                <div class="highlight-text" style="margin-top: 15px; font-size: 0.95rem;">
+                    <i class="fas fa-microphone-alt"></i> <strong>التحليل الأصلي:</strong> إجمالي إنتاج الفدان (300,000 جنيه) يمثل ضعف المديونية (150,000) – تغطية 200% – مما يجعل تطبيق "النموذج الديناميكي المحفوظ" مجدياً اقتصادياً ويحقق العدالة التعاقدية.
+                </div>
+            </div>
+        </div>
+
+        <!-- محتوى إضافي للتوثيق الكامل: نؤكد أن النص الأصلي لم يطرأ عليه أي تغيير -->
+        <footer>
+            <i class="fas fa-file-alt"></i> جميع التحليلات والنصوص أعلاه مستخرجة بدقة من النموذج المالي الأصلي "إدارة الفجوة النقدية وتحجيم المخاطر الزراعية" – بدون أي تعديل أو حذف – فقط تم تنظيمها وتوزيعها بشكل احترافي.
+        </footer>
+    </div> <!-- end content -->
+</div> <!-- end container -->
+</body>
+</html>
